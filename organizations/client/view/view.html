@@ -1,5 +1,18 @@
 <template name="organizationProfile">
-    {{# if Template.subscriptionsReady }}
+  {{# if Template.subscriptionsReady }}
     {{> organizationProfileHeader organization=organization }}
-    {{/if}}
+    <div class="container">
+      <div class="row">
+        <div class="col-md-9">
+        </div>
+        {{# if currentUser }}
+          {{# if organization.currentUserCanEdit }}
+            <div class="col-md-3">
+              {{> organizationManagersList organization=organization }}
+            </div>
+          {{/ if }}
+        {{/ if }}
+      </div>
+    </div>
+  {{/if}}
 </template>
