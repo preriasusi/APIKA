@@ -1,24 +1,22 @@
 <template name="organizationProfile">
   {{# if Template.subscriptionsReady }}
     {{> organizationProfileHeader organization=organization }}
-      <div class="container">
-        <!--container-fluid addes padding-left -->
-        <div class="container-fluid row">
+    <div class="container">
+      <div class="tab-content">
+        <div id="organization-apis" class="tab-pane fade in active">
           <label class="h3">
             {{_ 'organizationProfile_bigText_apisCount'  }}
           </label>
           <label>
             {{_ 'organizationProfile_smallText_apisCount' managedApisCount}}
           </label>
-        </div>
-        {{> catalogueGrid apis=managedApis }}
-        {{# if currentUser }}
-          {{# if organization.currentUserCanEdit }}
-            <div class="col-md-3">
-              {{> organizationManagersList organization=organization }}
-            </div>
-          {{/ if }}
-        {{/ if }}
+          {{> catalogueGrid apis=managedApis }}
+        </div> <!-- /api-backend-details -->
+
+        <div id="organization-settings" class="tab-pane fade">
+          {{> organizationSettings organization=organization }}
+        </div> <!-- /api-documentation -->
       </div>
+    </div>
   {{/if}}
 </template>
