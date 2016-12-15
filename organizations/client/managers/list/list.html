@@ -3,8 +3,14 @@
     <div class="panel-heading">
       <h3 class="panel-title">Managers</h3>
     </div>
-    <ul class="list-group">
-      <li class="list-group-item">manager's email</li>
-    </ul>
+    <div class="panel-body">
+      {{> addOrganizationManagerForm organization = organization }}
+      <ul class="list-group">
+        {{# each organizationManagers }}
+        <li class="list-group-item">{{ username }} ({{ email }})
+        </li>
+        {{/ each }}
+      </ul>
+    </div>
   </div>
 </template>
