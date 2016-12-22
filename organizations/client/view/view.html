@@ -13,9 +13,10 @@
         </div>
         {{# if userCanConnectApi }}
           <div class="col-md-9">
-            <button type="button" class="btn btn-default pull-right" id="connect-api">
+            <button type="button" class="btn btn-default pull-right" id="connect-api"
+            data-toogle="tooltip" {{ buttonAttributes }}>
               <i class="fa fa-plus" aria-hidden="true"></i>
-              Connect API to organization
+              {{_ 'organizationProfile_buttonText_connectApi' }}
             </button>
           </div>
         {{/ if }}

@@ -1,5 +1,5 @@
 import { Meteor } from 'meteor/meteor';
-import { Organizations } from '../';
+import { Organizations, OrganizationApis } from '../';
 
 Meteor.publish('singleOrganization', (slug) => Organizations.find({ slug }));
 
@@ -17,3 +17,5 @@ Meteor.publish('allOrganizationBasicDetails', () => {
 // Publish collection for pagination
 new Meteor.Pagination(Organizations);
 
+// TODO: Remove it
+Meteor.publish('orgApis', () => OrganizationApis.find());
